@@ -1,0 +1,60 @@
+.add__item_container {
+  background-color: var(--color-tertiary);
+  border-radius: 0.7rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+.input__box {
+  display: flex;
+  background-color: var(--color-secondary);
+  align-items: center;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  padding: 2rem;
+  gap: 2rem;
+}
+.label {
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input {
+  background-color: var(--color-secondary);
+  flex-grow: 1;
+  border: none;
+  font-size: 2.4rem;
+  color: var(--color-font);
+}
+.input:focus {
+  outline: none;
+}
+
+.btn__add {
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: var(--color-btn);
+  border-radius: 0.4rem;
+  font-size: inherit;
+}
+.btn__add:hover {
+  filter: hue-rotate(90deg);
+}
+
+.delete__all_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+.time {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.btn__delete_all {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
