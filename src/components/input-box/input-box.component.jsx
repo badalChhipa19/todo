@@ -1,4 +1,4 @@
-import CircumIcon from "@klarr-agency/circum-icons-react";
+import { BiPlus } from "react-icons/bi";
 import "./input-box.css";
 
 const InputBox = ({ addTodoHandler, todoItems, time, deleteAllHandler }) => {
@@ -6,7 +6,7 @@ const InputBox = ({ addTodoHandler, todoItems, time, deleteAllHandler }) => {
     <div className="add__item_container">
       <form className="input__box" onSubmit={addTodoHandler}>
         <label htmlFor="addItem" className="label">
-          <CircumIcon name="square_plus" color="#fcc419" />
+          <BiPlus className="add__icon" />
         </label>
         <input type="text" id="addItem" className="input" />
         <input type="submit" value="Add" className="btn btn__add" />

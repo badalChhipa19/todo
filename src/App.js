@@ -63,58 +63,59 @@ function App() {
     setTodo(temp);
   };
 
-  setTimeout(() => {
-    checkboxEl.forEach((item) => {
-      console.log(1);
-      item.addEventListener("click", function (e) {
-        e.target.checked
-          ? _setCheckboxValue(e, true)
-          : _setCheckboxValue(e, false);
+  const tickCheck = () =>
+    setTimeout(() => {
+      checkboxEl.forEach((item) => {
+        console.log(1);
+        item.addEventListener("click", function (e) {
+          e.target.checked
+            ? _setCheckboxValue(e, true)
+            : _setCheckboxValue(e, false);
+        });
       });
-    });
 
-    temp.forEach((item, i) => {
-      item.checked
-        ? listItemEl[i]
-            ?.querySelector(".item__checkbox")
-            .setAttribute("checked", true)
-        : listItemEl[i]
-            ?.querySelector(".item__checkbox")
-            .removeAttribute("checked");
-    });
+      temp.forEach((item, i) => {
+        item.checked
+          ? listItemEl[i]
+              ?.querySelector(".item__checkbox")
+              .setAttribute("checked", true)
+          : listItemEl[i]
+              ?.querySelector(".item__checkbox")
+              .removeAttribute("checked");
+      });
 
-    function _taskComplete(i, opacity, decoration) {
-      listItemEl[i].style.transition = "all .3s";
-      listItemEl[i].style.opacity = opacity;
-      itelTextEl[i].style.textDecoration = decoration;
-    }
-
-    checkboxEl.forEach((checkBox, i) => {
-      if (checkBox.checked) {
-        _taskComplete(i, 0.6, "line-through");
-      } else {
-        _taskComplete(i, 1, "none");
+      function _taskComplete(i, opacity, decoration) {
+        listItemEl[i].style.transition = "all .3s";
+        listItemEl[i].style.opacity = opacity;
+        itelTextEl[i].style.textDecoration = decoration;
       }
-    });
 
-    //*list style on hover
-    function _listAnimation(e, times) {
-      e.target.style.transition = "all .3s";
-      e.target.style.transform = `scale(${times})`;
-    }
-
-    //!IIFE(Immediately invoked function expression)
-    (function () {
-      listItemEl?.forEach((list, i) => {
-        list.addEventListener("mouseenter", (e) => {
-          _listAnimation(e, 0.99);
-        });
-        list.addEventListener("mouseleave", (e) => {
-          _listAnimation(e, 1);
-        });
+      checkboxEl.forEach((checkBox, i) => {
+        if (checkBox.checked) {
+          _taskComplete(i, 0.6, "line-through");
+        } else {
+          _taskComplete(i, 1, "none");
+        }
       });
-    })();
-  }, 200);
+
+      //*list style on hover
+      function _listAnimation(e, times) {
+        e.target.style.transition = "all .3s";
+        e.target.style.transform = `scale(${times})`;
+      }
+
+      //!IIFE(Immediately invoked function expression)
+      (function () {
+        listItemEl?.forEach((list, i) => {
+          list.addEventListener("mouseenter", (e) => {
+            _listAnimation(e, 0.99);
+          });
+          list.addEventListener("mouseleave", (e) => {
+            _listAnimation(e, 1);
+          });
+        });
+      })();
+    }, 500);
 
   //!Delete item handler
 
@@ -133,7 +134,7 @@ function App() {
   //! Return
   return (
     <div className="App">
-      <div className="todo__containerr">
+      <div className="todo__container">
         <header className="header">
           <h1 className="heading__primary">What ToDo</h1>
           <InputBox
@@ -143,7 +144,11 @@ function App() {
             todoItems={todo}
           />
         </header>
-        <Items todoItem={todo} deleteHandler={deleteItem} />
+        <Items
+          todoItem={todo}
+          deleteHandler={deleteItem}
+          tickCheckHandler={tickCheck}
+        />
       </div>
     </div>
   );
