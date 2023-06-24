@@ -30,6 +30,9 @@
 .input:focus {
   outline: none;
 }
+.input::placeholder {
+  opacity: 0.3;
+}
 
 .btn__add {
   text-transform: uppercase;
@@ -37,6 +40,7 @@
   background-color: var(--color-btn);
   border-radius: 0.4rem;
   font-size: inherit;
+  color: var(--color-primary) !important;
 }
 .btn__add:hover {
   filter: hue-rotate(90deg);

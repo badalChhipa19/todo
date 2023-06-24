@@ -1,7 +1,7 @@
 .list {
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 1rem;
   color: var(--color-font);
 }
@@ -46,6 +46,20 @@
 .item__date {
   border-left: 1px solid var(--color-primary);
   padding-left: 1rem;
+}
+
+.btns__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: max-content;
+}
+.btn__edit {
+  background-color: var(--color-btn-edit);
+  width: 100% !important;
+}
+.btn__edit:hover {
+  filter: hue-rotate(180deg);
 }
 
 .ticked {

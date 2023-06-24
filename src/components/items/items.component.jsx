@@ -1,6 +1,6 @@
 import "./items.css";
 
-const Items = ({ todoItem, deleteHandler, tickCheckHandler }) => {
+const Items = ({ todoItem, deleteHandler, editHandler }) => {
   return (
     <div className="items__container">
       <ul className="list">
@@ -16,14 +16,18 @@ const Items = ({ todoItem, deleteHandler, tickCheckHandler }) => {
               <label
                 htmlFor={`checkBox--${item.id}`}
                 className="fake__checkbox"
-                onClick={tickCheckHandler}
               ></label>
               <p className="item__text">{item.inputValue}</p>
               <div className="content__remove_box">
                 <p className="item__date">{item.date}</p>
-                <button className="btn btn__delete" onClick={deleteHandler}>
-                  Delete
-                </button>
+                <div className="btns__container">
+                  <button className="btn btn__edit" onClick={editHandler}>
+                    Edit
+                  </button>
+                  <button className="btn btn__delete" onClick={deleteHandler}>
+                    Delete
+                  </button>
+                </div>
               </div>
             </li>
           );
