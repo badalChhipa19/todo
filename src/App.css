@@ -30,6 +30,7 @@ body {
 
 .btn {
   width: max-content;
+  font-size: inherit;
   border: none;
   padding: 0.8rem 1.6rem;
   cursor: pointer;
@@ -66,75 +67,101 @@ body {
   background-clip: text;
   color: transparent;
   margin: 2rem 0 6rem 0;
+  line-height: normal;
 }
 .todo__container {
   position: relative;
   width: 100rem;
 }
 
-@media (max-width: 87.5em) {
-  .heading__primary {
-    margin: 2rem 0;
-  }
-}
-@media (max-width: 68.75em) {
+@media (max-width: 69em) {
   .todo__container {
-    max-width: 75rem;
+    padding: 0 5rem;
+    width: 100%;
   }
 }
-@media (max-width: 46.87em) {
+
+@media (max-width: 56.25em) {
+  .content__remove_box {
+    flex-direction: column;
+    border-left: 1px solid var(--color-primary);
+    align-self: stretch;
+    justify-content: center;
+    padding-left: 1rem;
+  }
+
+  .item__date {
+    border: none;
+    padding-left: 0;
+  }
+  .input {
+    width: 50%;
+    padding-left: 1rem;
+  }
+  .input__box {
+    gap: 0;
+  }
+}
+@media (max-width: 40.62em) {
+  .item__text {
+    grid-column: 2 / -1;
+  }
+  .content__remove_box {
+    grid-column: 1 / -1;
+    border: none;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid var(--color-primary);
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+  .fake__checkbox {
+    align-self: start;
+    margin-top: 1.5rem;
+  }
+  .btns__container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+@media (max-width: 31em) {
   html {
     font-size: 56.25%;
   }
 
+  .label {
+    display: none;
+  }
+  .heading__primary {
+    margin-bottom: 2rem;
+  }
+  .input__box {
+    padding: 1rem;
+  }
+  .heading__primary {
+    font-size: 5.4rem;
+  }
+  .btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 1.4rem;
+    border-radius: 3px;
+  }
+
   .todo__container {
-    max-width: 90vw;
-    min-width: 55rem;
+    padding: 0 1rem;
   }
 }
-@media (max-width: 34.37em) {
+@media (max-width: 23.5em) {
   html {
     font-size: 50%;
   }
-  .todo__container {
-    min-width: 40rem;
-  }
 
-  .content__remove_box {
-    justify-content: space-between;
-    grid-area: 2 / 1 / 3 / -1;
+  .input__box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
-  .btns__container {
-    flex-direction: row;
-  }
-  .item__text {
-    grid-column: 2 / -1;
-    border-bottom: 1px solid var(--color-primary);
-    margin-bottom: 1rem;
-  }
-  .item__date {
-    border-left: none;
-  }
-}
-
-@media (max-width: 25em) {
-  .todo__container {
-    min-width: 35rem;
-  }
-}
-
-@media (max-width: 21.87em) {
-  html {
-    font-size: 43.47%;
-  }
-
-  .todo__container {
-    padding: auto 1rem;
-    min-width: 15rem;
-  }
-}
-@media (max-width: 19.37em) {
-  html {
-    font-size: 37.5%;
+  .input {
+    width: 100%;
   }
 }

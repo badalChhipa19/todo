@@ -4,9 +4,11 @@
   flex-direction: column-reverse;
   gap: 1rem;
   color: var(--color-font);
+  padding-bottom: 5rem;
 }
 
 .list__item {
+  transition: opacity 0.3s, scale 0.3s;
   background-color: var(--color-secondary);
   border-radius: 0.6rem;
   overflow: hidden;
@@ -15,6 +17,7 @@
   align-items: center;
   padding: 1rem;
   justify-content: space-between;
+  overflow: hidden;
 }
 .item__checkbox {
   display: none;
@@ -32,7 +35,6 @@
 }
 
 .content__remove_box {
-  margin-right: 1rem;
   display: flex;
   gap: 2rem;
   align-items: center;
@@ -62,14 +64,20 @@
   filter: hue-rotate(180deg);
 }
 
-.ticked {
-  text-decoration: line-through;
-}
-
 .items__container {
   max-height: 60vh;
   overflow: scroll;
 }
 .items__container::-webkit-scrollbar {
   display: none;
+}
+
+/*! Helpers */
+.item__checked {
+  text-decoration: line-through;
+}
+
+.list__after_checked {
+  opacity: 0.5;
+  scale: 0.98;
 }

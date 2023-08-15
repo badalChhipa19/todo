@@ -1,6 +1,11 @@
 import "./items.css";
 
-const Items = ({ todoItem, deleteHandler, editHandler }) => {
+const Items = ({
+  todoItem,
+  deleteHandler,
+  editHandler,
+  checkboxEventHandler,
+}) => {
   return (
     <div className="items__container">
       <ul className="list">
@@ -12,6 +17,7 @@ const Items = ({ todoItem, deleteHandler, editHandler }) => {
                 className="item__checkbox"
                 data-check-tick={item.id}
                 id={`checkBox--${item.id}`}
+                onChange={checkboxEventHandler}
               />
               <label
                 htmlFor={`checkBox--${item.id}`}
